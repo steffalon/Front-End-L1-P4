@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+}
+
+html, body {
+  background-color: lightgray;
+  font-family: sans-serif;
+}
+
+.content {
+  padding-top: 1em;
+  margin: 15% 25%;
+  background-color: white;
+  text-align: center;
+}
+
+button {
+  border: 0;
+  background-color: black;
+  color: white;
+  width: 50%;
+  margin: 1em;
+  font-size: 1.2em;
+}
+footer {
+  background-color: black;
+  color: white;
+  padding: 5px 0;
+}

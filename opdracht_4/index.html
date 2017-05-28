@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>AJAX BMI - Simon Boerrigter</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="content">
+      <div class="invoer">
+        <h3>Hallo en welkom bij de BMI calculator</h3>
+        <p>Voer hier uw gewicht en lengte in.</p>
+        <br>
+        <label for="lengte">Lengte (cm)</label>
+        <br>
+        <input type="text" name="lengte" id="lengte" placeholder="Uw lengte">
+        <br>
+        <label for="gewicht">Gewicht (kg)</label>
+        <br>
+        <input type="text" name="gewicht" id="gewicht" placeholder="Uw Gewicht in kg">
+        <br>
+        <button type="button" name="button" onclick="combine()">Berekenen</button>
+      </div>
+      <div class="uitvoer">
+        <p>De resultaat: <span id="resultaat"></span></p>
+      </div>
+      <footer>
+        <p>Gemaakt door Simon Boerrigter</p>
+      </footer>
+    </div>
+    <script src="script/script.js"></script>
+    <script type="text/javascript">
+      function combine() {
+        let gewicht = document.getElementById('gewicht').value;
+        let lengte = document.getElementById('lengte').value;
+        ajax(gewicht, lengte);
+      }
+    </script>
+  </body>
+</html>
