@@ -1,32 +1,46 @@
 <?php
-$gewicht = $_GET['gewicht'];
-$lengte = $_GET['lengte_cm'];
+if (!empty($_GET['gewicht'])){
+  $gewicht = $_GET['gewicht'];
+} else {
+  $gewicht = null;
+}
+if (!empty($_GET['lengte_cm'])){
+  $lengte = $_GET['lengte_cm'];
+} else {
+  $lengte = null;
+}
+
 function BMIcalc($gewicht,$lengte)
 {
   if (empty($gewicht) || empty($lengte)) {
     echo "Voer alles in!";
   } else {
-    $lengte_m = $lengte / 100;
-    $bmi = round($gewicht / ($lengte_m * $lengte_m),1);
-    switch ($bmi) {
-      case $bmi < 18.5:
-        echo "U geeft ondergewicht.";
-        break;
-      case $bmi >= 18.5 and $bmi <= 25:
-        echo "U heeft normaal gewicht.";
-        break;
-      case $bmi >= 25 and $bmi <= 27:
-        echo "U heeft licht overgewicht.";
-        break;
-      case $bmi >= 27 and $bmi <= 30:
-        echo "U heeft matige overgewicht.";
-        break;
-      case $bmi >= 30 and $bmi <= 40:
-        echo "U heeft obesitas.";
-        break;
-      default:
-        echo "U heeft morbide obesitas.";
-        break;
+    if (is_numeric($gewicht) && is_numeric($lengte)) {
+      $lengte_m = $lengte / 100;
+      $bmi = round($gewicht / ($lengte_m * $lengte_m),1);
+      echo "U heeft als score: " . $bmi . " en volgens de schaal van de bmi heeft ";
+      switch ($bmi) {
+        case $bmi < 18.5:
+          echo "u geeft ondergewicht.";
+          break;
+        case $bmi >= 18.5 and $bmi <= 25:
+          echo "u heeft normaal gewicht.";
+          break;
+        case $bmi >= 25 and $bmi <= 27:
+          echo "u heeft licht overgewicht.";
+          break;
+        case $bmi >= 27 and $bmi <= 30:
+          echo "u heeft matige overgewicht.";
+          break;
+        case $bmi >= 30 and $bmi <= 40:
+          echo "u heeft obesitas.";
+          break;
+        default:
+          echo "u heeft morbide obesitas.";
+          break;
+      }
+    } else {
+      echo "Gebruik geen letters!";
     }
   }
 }
