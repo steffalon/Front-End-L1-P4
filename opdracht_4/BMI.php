@@ -21,22 +21,22 @@ function BMIcalc($gewicht,$lengte)
       echo "U heeft als score: " . $bmi . " en volgens de schaal van de bmi heeft ";
       switch ($bmi) {
         case $bmi < 18.5:
-          echo "u geeft ondergewicht.";
+          echo "u ondergewicht.";
           break;
         case $bmi >= 18.5 and $bmi <= 25:
-          echo "u heeft normaal gewicht.";
+          echo "u normaal gewicht.";
           break;
         case $bmi >= 25 and $bmi <= 27:
-          echo "u heeft licht overgewicht.";
+          echo "u licht overgewicht.";
           break;
         case $bmi >= 27 and $bmi <= 30:
-          echo "u heeft matige overgewicht.";
+          echo "u matige overgewicht.";
           break;
         case $bmi >= 30 and $bmi <= 40:
-          echo "u heeft obesitas.";
+          echo "u obesitas.";
           break;
         default:
-          echo "u heeft morbide obesitas.";
+          echo "u morbide obesitas.";
           break;
       }
     } else {
